@@ -12,7 +12,7 @@ public class Practice06Test {
 		queue = new ArrayQueue();
 		stack = new ArrayStack();
 	}
-	
+
 	
 	public void clearData() {
 		while (!queue.empty()) {
@@ -26,6 +26,8 @@ public class Practice06Test {
 	
 	public boolean isPalindrome(String item) {
 		clearData();
+		item = item.toLowerCase();
+		item = item.replaceAll("[^a-z]", "");
 		for (int i = 0; i < item.length(); i++) {
 			stack.push(item.substring(i, i+1));
 			queue.enqueue(item.substring(i, i+1));
